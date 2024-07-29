@@ -1,0 +1,7 @@
+Dividido em duas etapas:
+Montagem do cluster e deployment de apps e recursos.
+
+1- Etapa de montagem: executar terraform init / terraform apply diretorio principal. Logar no cluster. 
+
+2- Etapa de deploy: pegar os dados com output do terraform e alterar o arquivo terraform.tfvars que esta dentro do diretorio terraform, apos isso executar o terraform init / terraform apply dentro do diretorio terraform.
+2.1- Executar com kubectl apply -f nos arquivos de grafana para subir a app, lembrando de alterar o yml de configmap com os dados do keycloak. Apos isso execute primeiro o arquivo do configmap e depois o do deployment.
