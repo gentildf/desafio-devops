@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-keycloak-config
+  namespace: monitoring-tools
+data:
+  client_id: "grafana"
+  auth_url: "http://20.161.144.253:8080/auth/realms/master/protocol/openid-connect/auth"
+  token_url: "http://20.161.144.253:8080/auth/realms/master/protocol/openid-connect/token"
+  api_url: "http://20.161.144.253:8080/auth/realms/master/protocol/openid-connect/userinfo"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: grafana-keycloak-secret
+  namespace: monitoring-tools
+type: Opaque
+data:
+  client_secret: "n2D3KSVTC8YTY3jqFiVG4hq4xhRbJfWt"
